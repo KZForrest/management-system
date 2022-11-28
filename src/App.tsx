@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import Comp1 from "@/components/Comp1"
 import Comp2 from "@/components/Comp2"
+import { Button } from 'antd'
+import { UpCircleOutlined } from "@ant-design/icons"
+import { Outlet, Link } from "react-router-dom"
 
 
 function App() {
@@ -8,9 +11,9 @@ function App() {
 
   return (
     <div className="App">
-      顶级组件你爹
-      <Comp1></Comp1>
-      <Comp2></Comp2>
+      <Link to="/home"> Home </Link>  |
+      <Link to="/about"> About </Link>  
+      <Outlet></Outlet>
     </div>
   )
 }

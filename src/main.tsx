@@ -6,7 +6,7 @@ import "@/assets/styles/global.scss"
 
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
-import Router from "./router"
+// import Router from "./router"
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

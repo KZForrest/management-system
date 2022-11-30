@@ -8,6 +8,7 @@ import {
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu } from 'antd';
+import { Outlet, useNavigate } from "react-router-dom";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -41,13 +42,22 @@ const items: MenuItem[] = [
 
 const View: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
+    const navigateTo = useNavigate();
+
+    const menuClick = (e:{key:string}) => {
+        console.log("clicked", e.key);
+
+
+        //点击要跳转到对应的路由 编程式导航, hook
+        navigateTo(e.key)
+    }
 
     return (
         <Layout style={{ minHeight: '100vh' }}>
             {/* 左侧边栏 */}
             <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
                 <div className="logo" />
-                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+                <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} onClick={menuClick}/>
             </Sider>
             {/* 右边内容 */}
             <Layout className="site-layout">
@@ -62,8 +72,8 @@ const View: React.FC = () => {
                 {/* 右边白色盒子 */}
                 <Content style={{ margin: '16px 16px 0' }} className="site-layout-background">
                     {/* 窗口部分 */}
+                <Outlet></Outlet>
 
-                    
                 </Content>
                 {/* 右边底部 */}
                 <Footer style={{ textAlign: 'center', padding: 0, lineHeight: "48px" }}>Ant Design ©2018 Created by Ant UED</Footer>

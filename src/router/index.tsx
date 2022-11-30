@@ -6,6 +6,7 @@ import React, { lazy } from "react"
 // const User = lazy (() => import("../views/User"))
 const Page1 = lazy (() => import("../views/Page1"))
 const Page2 = lazy (() => import("../views/Page2"))
+const Page301 = lazy (() => import("../views/Page301"))
 //懒加载需要加一层React.Suspense
 
 const withLoadingComponent = (comp:JSX.Element) => (
@@ -15,6 +16,7 @@ const withLoadingComponent = (comp:JSX.Element) => (
 )
 
 const routes = [
+    //嵌套路由
     {
         path: "/",
         element:<Navigate to="/page1" />
@@ -30,8 +32,16 @@ const routes = [
             {
                 path: "/page2",
                 element: withLoadingComponent(<Page2 />)
+            },
+            {
+                path: "/page3/page301",
+                element: withLoadingComponent(<Page301 />)
             }
         ]
+    },
+    {
+        path:"*",
+        element:<Navigate to="/page1" />
     }
 ]
 

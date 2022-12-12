@@ -10,7 +10,7 @@ const View = () => {
     const dispatch = useDispatch()
     const changeNum = () => {
         //type是固定的一个记号，val可以自定义
-        dispatch({type:"add1"})
+        dispatch({type:"add3", val:100})
     }
 
     return (

@@ -106,17 +106,17 @@ const Comp: React.FC = () => {
     }
 
     //拿着curerntRoute.pathname跟items数组的每一项children的key值进行对比，如果相等就要上一级的Key
-    let firstOpenKey:string = ""
+    let firstOpenKey:string = "";
     //在这里进行对比
-    function findKey(obj) {
+    function findKey(obj:{key:string}) {
         return obj.key === currentRoute.pathname 
     }
 
     //多对比的是多个children
     for(let i=0; i<items.length; i++){
         //判断是否可以找到/是否存在对象
-        if(items[i]['children'] && items[i]['children'] >0 && items[i]['children'].find(findKey)){
-            firstOpenKey = items[i].key;
+        if(items[i]!['children'] && items[i]!['children'].length >0 && items[i]!['children'].find(findKey)){
+            firstOpenKey = items[i]!.key as string;
             break;
         }
     }

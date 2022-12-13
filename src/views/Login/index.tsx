@@ -54,7 +54,7 @@ const view = ()=>{
       // 1、提示登录成功
       message.success("登录成功！")
       // 2、保存token
-      localStorage.setItem("lege-react-management-token",loginAPIRes.token)
+      localStorage.setItem("kzf-react-management-token",loginAPIRes.token)
       // 3、跳转到/page1
       navigateTo("/page1")
       // 4、删除本地保存中的uuid
@@ -96,7 +96,7 @@ const view = ()=>{
           {/* 标题部分 */}
           <div className={styles.title}>
               <h1>KZF&nbsp;·&nbsp;通用后台系统</h1>
-              <p>Strive Everyday</p>
+              <p>测试用&nbsp;&nbsp;账户:qdtest1&nbsp;&nbsp;密码:123456</p>
           </div>
           {/* 表单部分 */}
           <div className="form">

@@ -41,13 +41,13 @@ const View = () => {
 
   return(
     <div className='home'>
-        <p>这是Page1页面内容</p>
+        <p>Page1页面内容</p>
         <p>{num}</p>
         <button onClick={changeNum}>同步按钮</button>
         <button onClick={changeNum2}>异步按钮</button>
 
         <p>{sarr}</p>
-        <button onClick={changeArr}>按钮</button>
+        <button onClick={changeArr}>push数组按钮</button>
     </div>
   )
 }

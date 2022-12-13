@@ -1,7 +1,7 @@
 const View = () => {
     return (
         <div className="home">
-            this is page301
+            Page301页面内容
         </div>
     )
 }

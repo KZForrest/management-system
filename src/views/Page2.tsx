@@ -1,7 +1,7 @@
 const View = () => {
     return (
         <div className="home">
-            this is page2
+            Page2页面内容
         </div>
     )
 }
